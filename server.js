@@ -2,7 +2,7 @@ const express = require("express");
 const pg=require("pg").Pool;
 const bodyParser = require('body-parser'); 
 const app = express();
-const pool=new pg({host:'ec2-52-70-15-120.compute-1.amazonaws.com',database:'d1gqrs1mbs46bt',user:'iyaxtbwduptoqe',password:'88e6c1cb651a0e52461964ea54d6164dfd51b1eae502744b47e3f788b259cc33',port:'5432',ssl: true});
+const pool=new pg({host:'ec2-52-70-15-120.compute-1.amazonaws.com',database:'d1gqrs1mbs46bt',user:'iyaxtbwduptoqe',password:'88e6c1cb651a0e52461964ea54d6164dfd51b1eae502744b47e3f788b259cc33',port:'5432',ssl: { rejectUnauthorized: false }});
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json()); 
 const _port = process.env.PORT || 5000;
